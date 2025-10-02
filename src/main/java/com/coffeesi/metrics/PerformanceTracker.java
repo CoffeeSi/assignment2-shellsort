@@ -11,8 +11,8 @@ public class PerformanceTracker {
     private long swaps;
     private long arrayAccesses;
     private long allocations;
-    private long startTime;
-    private long endTime;
+    private double startTime;
+    private double endTime;
 
     public PerformanceTracker(String filename) {
         this.filename = filename + ".csv";
@@ -42,7 +42,7 @@ public class PerformanceTracker {
     public long getSwaps() { return swaps; }
     public long getArrayAccess() { return arrayAccesses; }
     public long getAllocations() { return allocations; }
-    public long getDurationMs() { return (endTime - startTime) / 1000000; }
+    public double getDurationMs() { return (endTime - startTime) / 1000000; }
 
     public void reset() {
         comparisons = swaps = arrayAccesses = allocations = 0;
@@ -51,7 +51,7 @@ public class PerformanceTracker {
 
     public void writeToCSV(String algorithm) {
         try (FileWriter writer = new FileWriter(filename, true)) {
-            writer.write(String.format("%s,%d,%d,%d,%d,%d,%d%n", 
+            writer.write(String.format("%s,%d,%d,%d,%d,%d,%.4f%n", 
                 algorithm, getN(), getComparisons(), getSwaps(), getArrayAccess(), getAllocations(), getDurationMs()));
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
