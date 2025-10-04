@@ -24,9 +24,10 @@ public class Shellsort {
                 int j = i;
                 while (j >= gap) {
                     metrics.addComparison();
+                    int prev = array[j - gap];
                     metrics.addArrayAccess();
                     if (array[j - gap] > temp) {
-                        array[j] = array[j - gap];
+                        array[j] = prev;
                         metrics.addArrayAccess();
                         metrics.addSwap();
                         j -= gap;
