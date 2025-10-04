@@ -56,7 +56,7 @@ public class Shellsort {
         else if (sequence.equals("sedgewick")) {
             int k = 1;
             while (true) {
-                int gap = (int) Math.pow(4, k) + 3 * (int) Math.pow(2, k-1) + 1;
+                int gap = (int) (Math.pow(4, k) + 3 * Math.pow(2, k - 1) + 1);
                 if (gap >= n) break;
                 gaps.add(0, gap);
                 k++;
