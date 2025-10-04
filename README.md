@@ -37,6 +37,20 @@ Performance metrics are saved in ``metrics.csv`` file.
 
 - Already sorted → O(n log n).
 
+![Chart 1](/docs/performance-plots/chart1.png)
+
+## Conclusion
+
+Shell Sort was implemented with multiple gap sequences and validated through theory and benchmarks.
+
+- Sedgewick’s sequence showed the best performance in practice.
+
+- Edge cases were handled correctly, ensuring robust behavior.
+
+- Metrics and JMH benchmarks confirmed theoretical complexity with real data.
+
+This work shows how combining analysis and measurement represents algorithm efficiency.
+
 ## Author
 
 Yevgeniy Averyanov SE-2436
