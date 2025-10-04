@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class Shellsort {
     public static void sort(int[] array, String sequence) {
+        if (array == null || array.length <= 1) {
+            return;
+        }
         PerformanceTracker metrics = new PerformanceTracker("metrics");
         ArrayList<Integer> gaps = computeGaps(sequence, array.length);
         metrics.startTimer();
